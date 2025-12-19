@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex's AI Impact Report: December 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #f0f9ff;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Section */
+        .header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .header-left {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title {
+            font-size: 48px;
+            font-weight: bold;
+            color: #0c4a6e;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .greeting {
+            font-size: 24px;
+            color: #075985;
+            margin-bottom: 30px;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            border-radius: 15px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 5px 15px rgba(2, 132, 199, 0.3);
+        }
+
+        .stat-number {
+            font-size: 72px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .robot-icon {
+            font-size: 48px;
+        }
+
+        .stat-text {
+            margin-top: 20px;
+            color: #075985;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .badge {
+            display: inline-block;
+            background: white;
+            border-radius: 50px;
+            padding: 10px 20px;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #0284c7;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Timeline Section */
+        .timeline {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0c4a6e;
+            margin-bottom: 25px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background: #0284c7;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -8px;
+            top: 5px;
+            width: 18px;
+            height: 18px;
+            background: #0284c7;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #0284c7;
+        }
+
+        .timeline-date {
+            font-size: 18px;
+            font-weight: bold;
+            color: #0284c7;
+            margin-bottom: 8px;
+        }
+
+        .timeline-content {
+            color: #075985;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .timeline-link {
+            color: #0284c7;
+            text-decoration: none;
+            font-size: 14px;
+            margin-top: 5px;
+            display: inline-block;
+        }
+
+        /* Central Brain Graphic */
+        .brain-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px 0;
+            min-height: 200px;
+        }
+
+        .brain-graphic {
+            width: 300px;
+            height: 300px;
+            position: relative;
+        }
+
+        .brain-node {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #0284c7;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(2, 132, 199, 0.5);
+        }
+
+        .brain-node.active {
+            background: #f59e0b;
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.7);
+        }
+
+        .brain-node.highlight {
+            background: #10b981;
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.7);
+        }
+
+        .brain-connection {
+            position: absolute;
+            height: 2px;
+            background: rgba(2, 132, 199, 0.3);
+            transform-origin: left center;
+        }
+
+        /* Logistics Section */
+        .logistics-section {
+            margin-top: 50px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: bold;
+            color: #0c4a6e;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .panels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .panel {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .panel:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .panel-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .panel-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #0c4a6e;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .panel-description {
+            color: #075985;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .panel-link {
+            color: #0284c7;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .panel-link:hover {
+            text-decoration: underline;
+        }
+
+        .video-link {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .video-link:hover {
+            background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
+        }
+
+        /* Footer */
+        .footer {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+            color: #075985;
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                grid-template-columns: 1fr;
+            }
+
+            .title {
+                font-size: 32px;
+            }
+
+            .stat-number {
+                font-size: 48px;
+            }
+
+            .panels-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <div class="header-left">
+                <h1 class="title">AI Impact Report</h1>
+                
+                <div class="stat-text" style="background: white; border-radius: 15px; padding: 30px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
+                    <p style="font-size: 20px; color: #075985; line-height: 1.8; margin-bottom: 15px;">
+                        <strong>Hello Everyone,</strong>
+                    </p>
+                    <p style="font-size: 16px; color: #075985; line-height: 1.8; margin-bottom: 12px;">
+                        OpenAI moved into leading position with 113 Billion AI prompts for 2025, logistics business solutions have also exploded.
+                    </p>
+                    <p style="font-size: 16px; color: #075985; line-height: 1.8; margin-bottom: 12px;">
+                        From full facility automation to autonomous trucks, intelligent re-routing and a world record being set. To wrap it up, Feds have begun establishing an AI committee to review state and federal AI oversights.
+                    </p>
+                    <p style="font-size: 16px; color: #075985; line-height: 1.8; margin-top: 20px;">
+                        Cheers,<br>Alex
+                    </p>
+                </div>
+            </div>
+
+            <!-- Timeline Section -->
+            <div class="timeline">
+                <h2 class="timeline-title">December 2025 Highlights</h2>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Dec 17:</div>
+                    <div class="timeline-content">
+                        <strong>OpenAI Becomes the Enterprise "Default"</strong><br>
+                        113 B OpenAI transactions this year. 3x its nearest competitor.
+                        <a href="#" class="timeline-link">🔗 Source: ThreatLabz 2026 Sneak Peek</a>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Dec 11:</div>
+                    <div class="timeline-content">
+                        <strong>Federal AI Standards Established</strong><br>
+                        <a href="#" class="timeline-link">🔗 Source: White House AI Policy</a>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date" style="color: #f59e0b;">RK Internal Updates:</div>
+                    <div class="timeline-content">
+                        We've begun review our systems and working to build initial prototype iteration for client opportunities pipeline, client health and HR BDR funnel.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Central Brain Graphic -->
+        <div class="brain-section">
+            <div class="brain-graphic" id="brainGraphic">
+                <!-- Brain nodes and connections will be generated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Logistics Section -->
+        <div class="logistics-section">
+            <h2 class="section-title">Big Things in Logistics Business AI Solutions!</h2>
+            
+            <div class="panels-grid">
+                <!-- Panel 1: Kodiak AI -->
+                <div class="panel">
+                    <div class="panel-icon">🚛</div>
+                    <h3 class="panel-title">Kodiak & Verizon: 24/7 Driverless Freight</h3>
+                    <p class="panel-description">
+                        Kodiak AI and Verizon Business signed a commercial deal to use 5G and IoT for "Assisted Autonomy"—remote humans can "tele-operate" trucks through difficult docks while AI handles the highway. 24/7 driverless freight to become commercially viable today.
+                    </p>
+                    <a href="#" class="video-link">
+                        🎥 Video Briefing: Kodiak AI: The Future of Driverless Logistics
+                    </a>
+                </div>
+
+                <!-- Panel 2: AD Ports -->
+                <div class="panel">
+                    <div class="panel-icon">🏗️</div>
+                    <h3 class="panel-title">AD Ports Creates 'Total Facility Automation'</h3>
+                    <p class="panel-description">
+                        AD Ports set a Guinness World Record for deploying 205 AI agents to manage a single facility, orchestrating everything from crane movements to vessel speeds. "Digital Swarm" in logistics, moving beyond basic automation to total facility orchestration.
+                    </p>
+                    <a href="#" class="panel-link">🔗 Full Story Here →</a>
+                </div>
+
+                <!-- Panel 3: Mosaic -->
+                <div class="panel">
+                    <div class="panel-icon">🌐</div>
+                    <h3 class="panel-title">Mosaic Creates AI Logistics Mapping</h3>
+                    <p class="panel-description">
+                        Orderful Company launched Mosaic, an AI product that eliminates the manual "mapping" of data between different logistics partners by using LLMs to understand data context.
+                    </p>
+                    <p class="panel-description" style="font-weight: 600; color: #0284c7; margin-top: 10px;">
+                        Impact: Onboarding a new partner used to take 3 weeks of IT work; it now takes minutes.
+                    </p>
+                    <a href="#" class="panel-link">🔗 Full Story Here →</a>
+                    <a href="#" class="panel-link" style="margin-top: 5px; font-size: 12px;">Source: Orderful Mosaic Launch</a>
+                </div>
+
+                <!-- Panel 4: Shippo -->
+                <div class="panel">
+                    <div class="panel-icon">🛡️</div>
+                    <h3 class="panel-title">Shippo Offers "Self-Healing" Solution</h3>
+                    <p class="panel-description">
+                        Shippo introduced Shippo MCP, allowing AI agents to perform real-time shipping actions—like rerouting freight if disruptions (weather, strikes) are predicted. Moving from "Reactive" to "Self-Healing" logistics.
+                    </p>
+                    <a href="#" class="panel-link">🔗 Full Story Here →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+        </div>
+    </div>
+
+    <script>
+        // Generate brain/neural network graphic
+        function createBrainGraphic() {
+            const container = document.getElementById('brainGraphic');
+            const nodes = [];
+            const connections = [];
+
+            // Create nodes in a brain-like pattern
+            for (let i = 0; i < 30; i++) {
+                const angle = (i / 30) * Math.PI * 2;
+                const radius = 80 + Math.random() * 60;
+                const x = 150 + Math.cos(angle) * radius;
+                const y = 150 + Math.sin(angle) * radius;
+
+                const node = document.createElement('div');
+                node.className = 'brain-node';
+                if (Math.random() > 0.7) node.classList.add('active');
+                if (Math.random() > 0.9) node.classList.add('highlight');
+                node.style.left = x + 'px';
+                node.style.top = y + 'px';
+                container.appendChild(node);
+
+                nodes.push({ x, y });
+            }
+
+            // Create connections between nearby nodes
+            for (let i = 0; i < nodes.length; i++) {
+                for (let j = i + 1; j < nodes.length; j++) {
+                    const dx = nodes[j].x - nodes[i].x;
+                    const dy = nodes[j].y - nodes[i].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 100 && Math.random() > 0.7) {
+                        const connection = document.createElement('div');
+                        connection.className = 'brain-connection';
+                        connection.style.left = nodes[i].x + 'px';
+                        connection.style.top = nodes[i].y + 'px';
+                        connection.style.width = distance + 'px';
+                        connection.style.transform = `rotate(${Math.atan2(dy, dx) * 180 / Math.PI}deg)`;
+                        container.appendChild(connection);
+                    }
+                }
+            }
+        }
+
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', createBrainGraphic);
+    </script>
+</body>
+</html>
+
